@@ -5,25 +5,52 @@
    ========================================================== */
 
 :root {
-  /* Statut opérationnel */
+  --coprozen-blue: #00a9e7;
+  --coprozen-blue-dark: #0872b9;
+  --coprozen-blue-deep: #075d98;
+  --coprozen-blue-soft: #eaf8fd;
+
+  --coprozen-orange: #e47700;
+  --coprozen-orange-dark: #b95200;
+  --coprozen-gold: #f5c515;
+
+  --coprozen-text: #172333;
+  --coprozen-muted: #607083;
+  --coprozen-background: #f7fafc;
+  --coprozen-surface: #ffffff;
+  --coprozen-border: #e3eaf0;
+
+  --coprozen-success: #18a66a;
+  --coprozen-success-soft: #e7f8f1;
+  --coprozen-danger: #dc4a4a;
+  --coprozen-danger-soft: #fff0f0;
+  --coprozen-warning: #e49a1f;
+  --coprozen-warning-soft: #fff7e7;
+
+  --body-background-color: var(--coprozen-background);
+  --body-text-color: var(--coprozen-text);
+
+  --card-background-color: var(--coprozen-surface);
+  --card-border-color: var(--coprozen-border);
+
+  --nav-background-color: rgba(255, 255, 255, 0.94);
+  --nav-border-bottom-color: var(--coprozen-border);
+
+  --link-color: var(--coprozen-blue-dark);
+  --link-color-hover: var(--coprozen-blue-deep);
+  --primary-color: var(--coprozen-blue);
+
   --up-border-left-color: #18a66a;
-  --tag-up-background-color: #e7f8f1;
-
-  /* Statut indisponible */
   --down-border-left-color: #dc4a4a;
-  --tag-down-background-color: #fff0f0;
-
-  /* Statut dégradé */
   --degraded-border-left-color: #e49a1f;
-  --tag-degraded-background-color: #fff7e7;
-
-  /* Maintenance */
   --maintenance-border-left-color: #00a9e7;
-  --tag-maintenance-background-color: #eaf8fd;
 
   --tag-color: #172333;
+  --tag-up-background-color: #e7f8f1;
+  --tag-down-background-color: #fff0f0;
+  --tag-degraded-background-color: #fff7e7;
+  --tag-maintenance-background-color: #eaf8fd;
 }
-
 /* ==========================================================
    Base
    ========================================================== */
@@ -101,7 +128,6 @@ nav a:hover {
 /* ==========================================================
    Contenu principal
    ========================================================== */
-
 main {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -116,19 +142,15 @@ h3 {
 }
 
 h1 {
-  margin-bottom: 0.75rem;
+  color: var(--coprozen-text);
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
 h1 strong {
   color: var(--coprozen-blue-dark);
-  background: none;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  -webkit-background-clip: initial;
-  background-clip: initial;
 }
+
 
 h2 {
   font-size: clamp(1.45rem, 3vw, 2rem);
@@ -155,10 +177,10 @@ article {
   overflow: hidden;
   border: 1px solid var(--coprozen-border) !important;
   border-radius: 18px !important;
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
   box-shadow:
-    0 14px 40px rgba(23, 35, 51, 0.07),
-    0 2px 8px rgba(23, 35, 51, 0.035);
+    0 16px 42px rgba(23, 35, 51, 0.08),
+    0 3px 10px rgba(23, 35, 51, 0.04);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -169,10 +191,10 @@ article::after {
   position: absolute;
   top: 0;
   right: 0;
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  background: rgba(0, 169, 231, 0.035);
+  background: rgba(0, 169, 231, 0.045);
   content: "";
   pointer-events: none;
   transform: translate(45%, -45%);
@@ -181,8 +203,8 @@ article::after {
 article:hover {
   border-color: rgba(0, 169, 231, 0.32) !important;
   box-shadow:
-    0 20px 50px rgba(23, 35, 51, 0.1),
-    0 3px 10px rgba(23, 35, 51, 0.04);
+    0 22px 55px rgba(23, 35, 51, 0.11),
+    0 4px 12px rgba(23, 35, 51, 0.04);
   transform: translateY(-2px);
 }
 
