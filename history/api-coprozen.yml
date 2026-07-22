@@ -1,7 +1,7 @@
 url: https://api.coprozen.ma/health
-status: down
-code: 404
-responseTime: 126
-lastUpdated: 2026-07-22T17:38:31.715Z
+status: up
+code: 200
+responseTime: 524
+lastUpdated: 2026-07-22T17:47:38.999Z
 startTime: 2026-07-22T17:38:18.703Z
 generator: Upptime <https://github.com/upptime/upptime>
