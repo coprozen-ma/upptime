@@ -13,24 +13,7 @@ user-agent: CoproZen-Status-Monitor/1.0
 # ==========================================================
 # Services surveillés
 # ==========================================================
-
 sites:
-  # Domaine principal.
-  # Les codes 301 et 302 sont acceptés au cas où le domaine
-  # redirige automatiquement vers www.coprozen.ma.
-  - name: Site CoproZen
-    slug: site-coprozen
-    url: https://coprozen.ma
-    icon: https://coprozen.ma/favicon.ico
-    maxResponseTime: 10000
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
-      - 307
-      - 308
-
-  # Site institutionnel avec www.
   - name: Site institutionnel
     slug: site-institutionnel
     url: https://www.coprozen.ma
@@ -38,17 +21,11 @@ sites:
     maxResponseTime: 10000
     expectedStatusCodes:
       - 200
-      - 301
-      - 302
-      - 307
-      - 308
 
-  # Application métier.
-  # Les redirections vers une page de connexion sont normales.
   - name: Application CoproZen
     slug: application-coprozen
     url: https://app.coprozen.ma
-    icon: https://coprozen.ma/favicon.ico
+    icon: https://www.coprozen.ma/favicon.ico
     maxResponseTime: 12000
     expectedStatusCodes:
       - 200
@@ -57,17 +34,6 @@ sites:
       - 303
       - 307
       - 308
-
-  # API publique.
-  # L'endpoint /health doit être accessible sans authentification.
-  - name: API CoproZen
-    slug: api-coprozen
-    url: https://api.coprozen.ma/health
-    icon: https://coprozen.ma/favicon.ico
-    maxResponseTime: 8000
-    expectedStatusCodes:
-      - 200
-
 # ==========================================================
 # Attribution des incidents
 # ==========================================================
