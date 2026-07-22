@@ -1,6 +1,7 @@
+```css
 /* ==========================================================
    CoproZen Status
-   Charte inspirée du site et du logo officiels CoproZen
+   Thème personnalisé pour Upptime
    ========================================================== */
 
 :root {
@@ -58,7 +59,9 @@
   --tag-maintenance-background-color: var(--coprozen-blue-soft);
 }
 
-/* Base */
+/* ==========================================================
+   Base
+   ========================================================== */
 
 html {
   scroll-behavior: smooth;
@@ -96,7 +99,9 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Navigation */
+/* ==========================================================
+   Navigation
+   ========================================================== */
 
 nav {
   min-height: 72px;
@@ -128,7 +133,9 @@ nav a:hover {
   color: var(--coprozen-blue-dark) !important;
 }
 
-/* Contenu principal */
+/* ==========================================================
+   Contenu principal
+   ========================================================== */
 
 main {
   width: min(1120px, calc(100% - 2rem));
@@ -142,28 +149,20 @@ h3 {
   font-weight: 750;
   letter-spacing: -0.035em;
 }
+
 h1 {
-  color: var(--coprozen-text);
+  margin-bottom: 0.75rem;
   font-weight: 800;
   letter-spacing: -0.04em;
-  margin-bottom: 0.75rem;
-}
-
-main > div:first-child p {
-  color: var(--coprozen-muted);
-  max-width: 760px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-top: 0.75rem;
 }
 
 h1 strong {
   color: var(--coprozen-blue-dark);
   background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
   font-weight: 800;
   letter-spacing: -0.04em;
+  -webkit-background-clip: initial;
+  background-clip: initial;
 }
 
 h2 {
@@ -174,23 +173,20 @@ h3 {
   font-size: 1.05rem;
 }
 
-/* Texte d’introduction */
-
 main > div:first-child p {
   max-width: 760px;
+  margin-top: 0.75rem;
   color: var(--coprozen-muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
-/* Bandeau de statut général */
-
-main > div:first-child + div,
-article:first-of-type {
-  position: relative;
-}
+/* ==========================================================
+   Cartes
+   ========================================================== */
 
 article {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--coprozen-border) !important;
   border-radius: 18px !important;
@@ -225,24 +221,21 @@ article:hover {
   transform: translateY(-2px);
 }
 
-/* Titres des services */
-
-article h3,
-article strong {
+article h3 {
   color: var(--coprozen-text);
   font-weight: 700;
 }
-
-/* Icônes des services */
 
 article img {
   border-radius: 8px;
 }
 
-/* Tags et badges */
+/* ==========================================================
+   Badges
+   Utilisation de sélecteurs exacts uniquement
+   ========================================================== */
 
-.tag,
-[class*="tag"] {
+.tag {
   border: 1px solid transparent;
   border-radius: 999px !important;
   padding: 0.34rem 0.72rem !important;
@@ -252,37 +245,116 @@ article img {
   text-transform: uppercase;
 }
 
-/* États explicites */
-
-.up,
-[class*="up"] {
-  --status-accent: var(--coprozen-success);
+.tag.up,
+.status.up {
+  border-color: rgba(24, 166, 106, 0.18);
+  background: var(--coprozen-success-soft) !important;
+  color: var(--coprozen-success) !important;
 }
 
-.down,
-[class*="down"] {
-  --status-accent: var(--coprozen-danger);
+.tag.down,
+.status.down {
+  border-color: rgba(220, 74, 74, 0.18);
+  background: var(--coprozen-danger-soft) !important;
+  color: var(--coprozen-danger) !important;
 }
 
-.degraded,
-[class*="degraded"] {
-  --status-accent: var(--coprozen-warning);
+.tag.degraded,
+.status.degraded {
+  border-color: rgba(228, 154, 31, 0.2);
+  background: var(--coprozen-warning-soft) !important;
+  color: var(--coprozen-orange-dark) !important;
 }
 
-.maintenance,
-[class*="maintenance"] {
-  --status-accent: var(--coprozen-blue);
+.tag.maintenance,
+.status.maintenance {
+  border-color: rgba(0, 169, 231, 0.2);
+  background: var(--coprozen-blue-soft) !important;
+  color: var(--coprozen-blue-dark) !important;
 }
 
-/* Barres de disponibilité */
+/* ==========================================================
+   Cartes selon leur état
+   Sélecteurs exacts uniquement
+   ========================================================== */
 
-.bar,
-[class*="bar"] {
+article.up {
+  border-left-color: var(--coprozen-success) !important;
+}
+
+article.down {
+  border-color: rgba(220, 74, 74, 0.25) !important;
+  border-left-color: var(--coprozen-danger) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      var(--coprozen-danger-soft)
+    ) !important;
+}
+
+article.degraded {
+  border-color: rgba(228, 154, 31, 0.28) !important;
+  border-left-color: var(--coprozen-warning) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      var(--coprozen-warning-soft)
+    ) !important;
+}
+
+article.maintenance {
+  border-color: rgba(0, 169, 231, 0.25) !important;
+  border-left-color: var(--coprozen-blue) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      var(--coprozen-blue-soft)
+    ) !important;
+}
+
+/* ==========================================================
+   Indicateurs
+   ========================================================== */
+
+.up circle,
+.up rect,
+.up path.status-indicator {
+  fill: var(--coprozen-success) !important;
+}
+
+.down circle,
+.down rect,
+.down path.status-indicator {
+  fill: var(--coprozen-danger) !important;
+}
+
+.degraded circle,
+.degraded rect,
+.degraded path.status-indicator {
+  fill: var(--coprozen-warning) !important;
+}
+
+.maintenance circle,
+.maintenance rect,
+.maintenance path.status-indicator {
+  fill: var(--coprozen-blue) !important;
+}
+
+/* ==========================================================
+   Barres de disponibilité
+   ========================================================== */
+
+.bar {
   overflow: hidden;
   border-radius: 999px;
 }
 
-/* Liens */
+/* ==========================================================
+   Liens
+   ========================================================== */
 
 a {
   color: var(--coprozen-blue-dark);
@@ -295,7 +367,9 @@ a:hover {
   text-decoration-color: currentColor;
 }
 
-/* Boutons */
+/* ==========================================================
+   Boutons
+   ========================================================== */
 
 button,
 .button,
@@ -325,8 +399,6 @@ a[role="button"]:hover {
   transform: translateY(-1px);
 }
 
-/* Accent orange sur les actions secondaires */
-
 .button.secondary,
 a.secondary[role="button"] {
   border-color: var(--coprozen-orange) !important;
@@ -339,42 +411,9 @@ a.secondary[role="button"] {
   box-shadow: 0 8px 20px rgba(228, 119, 0, 0.18) !important;
 }
 
-/* Incidents */
-
-article.down,
-article[class*="down"] {
-  border-color: rgba(220, 74, 74, 0.25) !important;
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff,
-      var(--coprozen-danger-soft)
-    ) !important;
-}
-
-article.degraded,
-article[class*="degraded"] {
-  border-color: rgba(228, 154, 31, 0.28) !important;
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff,
-      var(--coprozen-warning-soft)
-    ) !important;
-}
-
-article.maintenance,
-article[class*="maintenance"] {
-  border-color: rgba(0, 169, 231, 0.25) !important;
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff,
-      var(--coprozen-blue-soft)
-    ) !important;
-}
-
-/* Graphiques */
+/* ==========================================================
+   Graphiques
+   ========================================================== */
 
 canvas,
 svg {
@@ -385,7 +424,27 @@ article svg {
   filter: drop-shadow(0 5px 12px rgba(23, 35, 51, 0.06));
 }
 
-/* Tableaux */
+.recharts-responsive-container {
+  min-width: 0;
+  min-height: 90px;
+}
+
+.recharts-wrapper,
+.recharts-surface {
+  overflow: visible;
+}
+
+/* Ne jamais masquer les graphiques ou leurs lignes */
+
+svg path,
+svg line,
+svg polyline {
+  visibility: visible;
+}
+
+/* ==========================================================
+   Tableaux
+   ========================================================== */
 
 table {
   overflow: hidden;
@@ -405,14 +464,14 @@ th {
   border-color: var(--coprozen-border) !important;
 }
 
-/* Séparateurs */
+/* ==========================================================
+   Séparateurs et pied de page
+   ========================================================== */
 
 hr {
   border: 0;
   border-top: 1px solid var(--coprozen-border);
 }
-
-/* Pied de page */
 
 footer {
   margin-top: 5rem;
@@ -426,14 +485,14 @@ footer a {
   font-weight: 600;
 }
 
-/* Sélection */
+/* ==========================================================
+   Sélection et défilement
+   ========================================================== */
 
 ::selection {
   background: rgba(0, 169, 231, 0.2);
   color: var(--coprozen-text);
 }
-
-/* Barre de défilement */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -453,7 +512,9 @@ footer a {
   background: #91a8ba;
 }
 
-/* Mobile */
+/* ==========================================================
+   Mobile
+   ========================================================== */
 
 @media (max-width: 760px) {
   nav {
@@ -482,7 +543,9 @@ footer a {
   }
 }
 
-/* Respect des préférences d’accessibilité */
+/* ==========================================================
+   Accessibilité
+   ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -493,3 +556,4 @@ footer a {
     animation: none !important;
   }
 }
+```
