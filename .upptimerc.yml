@@ -24,18 +24,18 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: Application CoproZen
-    slug: application-coprozen
-    url: https://app.coprozen.ma
-    icon: https://www.coprozen.ma/favicon.ico
-    maxResponseTime: 12000
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
-      - 303
-      - 307
-      - 308
+ # - name: Application CoproZen
+ #   slug: application-coprozen
+ #   url: https://app.coprozen.ma
+ #   icon: https://www.coprozen.ma/favicon.ico
+ #   maxResponseTime: 12000
+ #   expectedStatusCodes:
+ #     - 200
+ #     - 301
+ #     - 302
+ #     - 303
+ #     - 307
+ #     - 308
 
   - name: API CoproZen
     slug: api-coprozen
