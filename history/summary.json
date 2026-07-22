@@ -23,11 +23,11 @@
     "icon": "https://www.coprozen.ma/favicon.ico",
     "slug": "application-coprozen",
     "status": "down",
-    "uptime": "69.09%",
-    "uptimeDay": "69.09%",
-    "uptimeWeek": "69.09%",
-    "uptimeMonth": "69.09%",
-    "uptimeYear": "69.09%",
+    "uptime": "73.27%",
+    "uptimeDay": "73.27%",
+    "uptimeWeek": "73.27%",
+    "uptimeMonth": "73.27%",
+    "uptimeYear": "73.27%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
@@ -54,7 +54,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-07-22": 14
+      "2026-07-22": 23
     }
   }
 ]
