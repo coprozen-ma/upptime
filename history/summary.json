@@ -23,19 +23,17 @@
     "icon": "https://www.coprozen.ma/favicon.ico",
     "slug": "application-coprozen",
     "status": "down",
-    "uptime": "86.17%",
-    "uptimeDay": "86.17%",
-    "uptimeWeek": "86.17%",
-    "uptimeMonth": "86.17%",
-    "uptimeYear": "86.17%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-07-22": 18
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "API CoproZen",
@@ -43,18 +41,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.coprozen.ma.ico",
     "slug": "api-coprozen",
     "status": "down",
-    "uptime": "67.87%",
-    "uptimeDay": "67.87%",
-    "uptimeWeek": "67.87%",
-    "uptimeMonth": "67.87%",
-    "uptimeYear": "67.87%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-07-22": 23
-    }
+    "dailyMinutesDown": {}
   }
 ]
