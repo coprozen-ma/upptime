@@ -1,23 +1,5 @@
 [
   {
-    "name": "Site CoproZen",
-    "url": "https://coprozen.ma",
-    "icon": "https://coprozen.ma/favicon.ico",
-    "slug": "site-coprozen",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {}
-  },
-  {
     "name": "Site institutionnel",
     "url": "https://www.coprozen.ma",
     "icon": "https://www.coprozen.ma/favicon.ico",
@@ -38,41 +20,21 @@
   {
     "name": "Application CoproZen",
     "url": "https://app.coprozen.ma",
-    "icon": "https://coprozen.ma/favicon.ico",
+    "icon": "https://www.coprozen.ma/favicon.ico",
     "slug": "application-coprozen",
     "status": "down",
-    "uptime": "92.18%",
-    "uptimeDay": "92.18%",
-    "uptimeWeek": "92.18%",
-    "uptimeMonth": "92.18%",
-    "uptimeYear": "92.18%",
+    "uptime": "69.38%",
+    "uptimeDay": "69.38%",
+    "uptimeWeek": "69.38%",
+    "uptimeMonth": "69.38%",
+    "uptimeYear": "69.38%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-07-22": 3
-    }
-  },
-  {
-    "name": "API CoproZen",
-    "url": "https://api.coprozen.ma/health",
-    "icon": "https://coprozen.ma/favicon.ico",
-    "slug": "api-coprozen",
-    "status": "down",
-    "uptime": "64.45%",
-    "uptimeDay": "64.45%",
-    "uptimeWeek": "64.45%",
-    "uptimeMonth": "64.45%",
-    "uptimeYear": "64.45%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-07-22": 14
+      "2026-07-22": 16
     }
   }
 ]
