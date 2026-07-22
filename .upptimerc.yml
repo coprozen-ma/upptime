@@ -5,9 +5,7 @@
 
 owner: coprozen-ma
 repo: upptime
-skipDescriptionUpdate: true
-skipTopicsUpdate: true
-skipHomepageUpdate: true
+
 # User-Agent envoyé aux services surveillés.
 # Utile pour identifier les contrôles dans les journaux serveur/WAF.
 user-agent: CoproZen-Status-Monitor/1.0
