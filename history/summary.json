@@ -18,24 +18,6 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Application CoproZen",
-    "url": "https://app.coprozen.ma",
-    "icon": "https://www.coprozen.ma/favicon.ico",
-    "slug": "application-coprozen",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {}
-  },
-  {
     "name": "API CoproZen",
     "url": "https://api.coprozen.ma/health",
     "icon": "https://icons.duckduckgo.com/ip3/api.coprozen.ma.ico",
