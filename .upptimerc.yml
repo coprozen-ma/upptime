@@ -1,27 +1,110 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: coprozen-ma
+repo: upptime
+
+user-agent: coprozen-status-monitor
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: Coprozen
+  - name: Application Coprozen
+    url: https://coprozen.ma
+    icon: https://coprozen.ma/favicon.ico
+    maxResponseTime: 3000
+    expectedStatusCodes:
+      - 200
+
+  - name: API Coprozen
+    url: https://api.coprozen.ma/health
+    icon: https://coprozen.ma/favicon.ico
+    maxResponseTime: 2000
+    expectedStatusCodes:
+      - 200
+
+  - name: Espace client
+    url: https://app.coprozen.ma
+    icon: https://coprozen.ma/favicon.ico
+    maxResponseTime: 3000
+    expectedStatusCodes:
+      - 200
+
+  - name: Site institutionnel
     url: https://www.coprozen.ma
-  - name: Coprozen API
-    url: https://api.coprozen.ma
+    icon: https://coprozen.ma/favicon.ico
+    maxResponseTime: 3000
+    expectedStatusCodes:
+      - 200
+
 status-website:
   cname: status.coprozen.ma
-  name: Coprozen Status
+
+  name: État des services Coprozen
   logoUrl: https://coprozen.ma/logo.png
+  favicon: https://coprozen.ma/favicon.ico
 
-  introTitle: "Statut des services Coprozen"
-  introMessage: "Surveillance en temps réel des services Coprozen."
+  themeUrl: https://status.coprozen.ma/coprozen-theme.css
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+  introTitle: "État des services **Coprozen**"
+  introMessage: >
+    Consultez en temps réel la disponibilité de nos services.
+    Cette page est automatiquement mise à jour lorsqu’un incident
+    ou une opération de maintenance affecte la plateforme.
+
+  navbar:
+    - title: Statut
+      href: /
+
+    - title: Application
+      href: https://app.coprozen.ma
+
+    - title: Site Coprozen
+      href: https://coprozen.ma
+
+    - title: Support
+      href: https://coprozen.ma/contact
+
+  metaTags:
+    - name: robots
+      content: index, follow
+
+    - name: description
+      content: État en temps réel des services, applications et API Coprozen.
+
+    - property: og:title
+      content: État des services Coprozen
+
+    - property: og:description
+      content: Consultez la disponibilité en temps réel des services Coprozen.
+
+    - property: og:type
+      content: website
+
+    - property: og:url
+      content: https://status.coprozen.ma
+
+    - property: og:image
+      content: https://coprozen.ma/status-preview.png
+
+  customHeadHtml: |
+    <meta name="theme-color" content="#07111f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "0 */6 * * *"
+  graphs: "0 0 * * *"
+  summary: "0 0 * * *"
+  staticSite: "0 1 * * *"
+  updates: "0 3 * * *"
+
+commitMessages:
+  commitAuthorName: Coprozen Status Bot
+  commitAuthorEmail: status@coprozen.ma
+
+  readmeContent: "docs: update service availability"
+  summaryJson: "data: update status summary"
+  statusChange: "status: update $SITE_NAME"
+  graphsUpdate: "data: update response-time graphs"
+  commitPrefixStatus: "🟢"
+  commitPrefixStatusDown: "🔴"
+  commitPrefixStatusMaintenance: "🟡"
+
+skipDeleteIssues: true
