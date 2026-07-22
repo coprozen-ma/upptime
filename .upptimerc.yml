@@ -34,6 +34,13 @@ sites:
       - 303
       - 307
       - 308
+
+  - name: API CoproZen
+    slug: api-coprozen
+    url: https://api.coprozen.ma/health
+    maxResponseTime: 8000
+    expectedStatusCodes:
+      - 200
 # ==========================================================
 # Attribution des incidents
 # ==========================================================
