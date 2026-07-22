@@ -1,7 +1,18 @@
+# ==========================================================
+# CoproZen — Upptime
+# Monitoring et page publique de statut
+# ==========================================================
+
 owner: coprozen-ma
 repo: upptime
 
-user-agent: coprozen-status-monitor
+# User-Agent envoyé aux services surveillés.
+# Utile pour identifier les contrôles dans les journaux serveur/WAF.
+user-agent: CoproZen-Status-Monitor/1.0
+
+# ==========================================================
+# Services surveillés
+# ==========================================================
 
 sites:
   # Domaine principal.
@@ -57,79 +68,171 @@ sites:
     expectedStatusCodes:
       - 200
 
+# ==========================================================
+# Attribution des incidents
+# ==========================================================
+
+assignees:
+  - saadamine
+
+# Les incidents restent dans GitHub Issues afin de conserver
+# un historique consultable.
+skipDeleteIssues: true
+
+# ==========================================================
+# Page publique
+# ==========================================================
+
 status-website:
   cname: status.coprozen.ma
 
-  name: État des services Coprozen
-  logoUrl: https://coprozen.ma/logo.png
+  name: Statut CoproZen
+
+  logoUrl: https://www.coprozen.ma/coprozen_logo_with_text.png
   favicon: https://coprozen.ma/favicon.ico
 
+  # Le fichier doit exister dans :
+  # assets/coprozen-theme.css
+  #
+  # Upptime publie automatiquement les fichiers du dossier assets
+  # à la racine du site.
   themeUrl: https://status.coprozen.ma/coprozen-theme.css
 
-  introTitle: "État des services **Coprozen**"
+  introTitle: "État des services **CoproZen**"
+
   introMessage: >
-    Consultez en temps réel la disponibilité de nos services.
-    Cette page est automatiquement mise à jour lorsqu’un incident
-    ou une opération de maintenance affecte la plateforme.
+    Consultez en temps réel la disponibilité de la plateforme CoproZen,
+    de l’espace applicatif, de l’API et du site institutionnel.
+    Cette page est actualisée automatiquement lorsqu’un incident
+    ou une dégradation de service est détecté.
 
   navbar:
-    - title: Statut
+    - title: État des services
       href: /
+
+    - title: Site CoproZen
+      href: https://www.coprozen.ma
 
     - title: Application
       href: https://app.coprozen.ma
 
-    - title: Site Coprozen
-      href: https://coprozen.ma
-
     - title: Support
-      href: https://coprozen.ma/contact
+      href: mailto:support@coprozen.ma
 
   metaTags:
+    - name: description
+      content: État et disponibilité en temps réel des services CoproZen.
+
     - name: robots
       content: index, follow
 
-    - name: description
-      content: État en temps réel des services, applications et API Coprozen.
-
-    - property: og:title
-      content: État des services Coprozen
-
-    - property: og:description
-      content: Consultez la disponibilité en temps réel des services Coprozen.
+    - name: theme-color
+      content: "#00a9e7"
 
     - property: og:type
       content: website
+
+    - property: og:title
+      content: État des services CoproZen
+
+    - property: og:description
+      content: Consultez la disponibilité de la plateforme et des services CoproZen.
 
     - property: og:url
       content: https://status.coprozen.ma
 
     - property: og:image
-      content: https://coprozen.ma/status-preview.png
+      content: https://www.coprozen.ma/coprozen_logo_with_text.png
 
   customHeadHtml: |
-    <meta name="theme-color" content="#07111f">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+
+  customFootHtml: |
+    <div style="
+      max-width: 1120px;
+      margin: 24px auto 0;
+      padding: 20px 16px;
+      text-align: center;
+      color: #607083;
+      font-size: 14px;
+    ">
+      La disponibilité affichée est mesurée automatiquement depuis
+      l’infrastructure de surveillance CoproZen.
+    </div>
+
+# ==========================================================
+# Internationalisation française
+# ==========================================================
+
+i18n:
+  activeIncidents: Incidents en cours
+  allSystemsOperational: Tous les services sont opérationnels
+  incidentReport: "Incident n°$NUMBER"
+  activeIncidentSummary: Ouvert le $DATE avec $POSTS mises à jour
+  incidentTitle: Détails de l’incident $NUMBER
+  incidentDetails: Détails de l’incident
+  incidentFixed: Résolu
+  incidentOngoing: En cours
+  incidentOpenedAt: Ouvert le
+  incidentClosedAt: Résolu le
+  incidentViewOnGitHub: Voir l’incident
+  incidentCommentSummary: Publié le $DATE par $AUTHOR
+  pastIncidents: Incidents précédents
+  pastIncidentsResolved: Résolu en $MINUTES minutes avec $POSTS mises à jour
+  liveStatus: État actuel
+  overallUptime: "Disponibilité globale : $UPTIME"
+  overallUptimeTitle: Disponibilité globale
+  averageResponseTime: "Temps de réponse moyen : $TIME ms"
+  averageResponseTimeTitle: Temps de réponse moyen
+  sevelDayResponseTime: Temps de réponse sur 7 jours
+  responseTimeMs: Temps de réponse en millisecondes
+  up: Opérationnel
+  down: Indisponible
+  degraded: Dégradé
+  ms: ms
+  loading: Chargement
+  navGitHub: GitHub
+  footer: © CoproZen — État des services
+  rateLimitExceededTitle: Limite de consultation atteinte
+  rateLimitExceededIntro: >
+    Les données temporaires ne peuvent pas être chargées immédiatement.
+    Veuillez réessayer dans quelques minutes.
+  rateLimitExceededWhatDoesErrorMean: Pourquoi ce message apparaît-il ?
+  rateLimitExceededErrorMeaning: >
+    La limite de consultation de l’API GitHub a été temporairement atteinte.
+    La surveillance des services continue normalement en arrière-plan.
+  rateLimitExceededErrorHowCanFix: Que faire ?
+  rateLimitExceededErrorFix: >
+    Actualisez cette page dans quelques minutes. Aucun accès ou jeton personnel
+    n’est nécessaire pour consulter la page de statut.
+
+# ==========================================================
+# Planification des workflows
+# Les horaires utilisent UTC.
+# ==========================================================
 
 workflowSchedule:
   uptime: "*/5 * * * *"
   responseTime: "0 */6 * * *"
   graphs: "0 0 * * *"
-  summary: "0 0 * * *"
-  staticSite: "0 1 * * *"
+  summary: "0 1 * * *"
+  staticSite: "0 2 * * *"
   updates: "0 3 * * *"
 
+# ==========================================================
+# Messages de commit générés par Upptime
+# ==========================================================
+
 commitMessages:
-  commitAuthorName: Coprozen Status Bot
-  commitAuthorEmail: status@coprozen.ma
+  commitAuthorName: CoproZen Monitoring
+  commitAuthorEmail: support@coprozen.ma
 
-  readmeContent: "docs: update service availability"
-  summaryJson: "data: update status summary"
-  statusChange: "status: update $SITE_NAME"
-  graphsUpdate: "data: update response-time graphs"
-  commitPrefixStatus: "🟢"
-  commitPrefixStatusDown: "🔴"
-  commitPrefixStatusMaintenance: "🟡"
-
-skipDeleteIssues: true
+  repoConfig: "chore: mise à jour de la configuration"
+  readmeContent: "docs: mise à jour de l’état des services"
+  summaryJson: "data: mise à jour du résumé"
+  statusChange: "status: $SITE_NAME est $STATUS"
+  graphsUpdate: "data: mise à jour des graphiques"
+  responseTime: "perf: mise à jour du temps de réponse de $SITE_NAME"
+  staticSite: "site: reconstruction de la page de statut"
