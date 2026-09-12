@@ -183,7 +183,9 @@ commitMessages:
   repoConfig: "chore: mise à jour de la configuration"
   readmeContent: "docs: mise à jour de l’état des services"
   summaryJson: "data: mise à jour du résumé"
-  statusChange: "status: $SITE_NAME est $STATUS"
+  # Upptime analyse ce format pour calculer le statut et le temps de réponse.
+  # Conserver $PREFIX et la séquence exacte `in $RESPONSE_TIME ms`.
+  statusChange: "$PREFIX $SITE_NAME est $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [skip ci] [upptime]"
   graphsUpdate: "data: mise à jour des graphiques"
   responseTime: "perf: mise à jour du temps de réponse de $SITE_NAME"
   staticSite: "site: reconstruction de la page de statut"
