@@ -1,6 +1,6 @@
 [
   {
-    "name": "Site institutionnel",
+    "name": "Site public CoproZen",
     "url": "https://www.coprozen.ma",
     "icon": "https://www.coprozen.ma/favicon.ico",
     "slug": "site-institutionnel",
@@ -18,8 +18,26 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "API CoproZen",
-    "url": "https://api.coprozen.ma/health",
+    "name": "Espace de connexion CoproZen",
+    "url": "https://www.coprozen.ma/auth/login",
+    "icon": "https://www.coprozen.ma/favicon.ico",
+    "slug": "application-coprozen",
+    "status": "down",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Services applicatifs CoproZen",
+    "url": "https://api.coprozen.ma/health/ready",
     "icon": "https://icons.duckduckgo.com/ip3/api.coprozen.ma.ico",
     "slug": "api-coprozen",
     "status": "down",
