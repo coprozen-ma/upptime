@@ -14,31 +14,26 @@ user-agent: CoproZen-Status-Monitor/1.0
 # Services surveillés
 # ==========================================================
 sites:
-  - name: Site institutionnel
+  - name: Site public CoproZen
     slug: site-institutionnel
     url: https://www.coprozen.ma
     icon: https://www.coprozen.ma/favicon.ico
-    maxResponseTime: 10000
+    maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 
- # - name: Application CoproZen
- #   slug: application-coprozen
- #   url: https://app.coprozen.ma
- #   icon: https://www.coprozen.ma/favicon.ico
- #   maxResponseTime: 12000
- #   expectedStatusCodes:
- #     - 200
- #     - 301
- #     - 302
- #     - 303
- #     - 307
- #     - 308
+  - name: Espace de connexion CoproZen
+    slug: application-coprozen
+    url: https://www.coprozen.ma/auth/login
+    icon: https://www.coprozen.ma/favicon.ico
+    maxResponseTime: 5000
+    expectedStatusCodes:
+      - 200
 
-  - name: API CoproZen
+  - name: Services applicatifs CoproZen
     slug: api-coprozen
-    url: https://api.coprozen.ma/health
-    maxResponseTime: 8000
+    url: https://api.coprozen.ma/health/ready
+    maxResponseTime: 5000
     expectedStatusCodes:
       - 200
 # ==========================================================
@@ -47,6 +42,7 @@ sites:
 
 assignees:
   - saadamine
+  - kadda-Tarek
 
 # Les incidents restent dans GitHub Issues afin de conserver
 # un historique consultable.
@@ -71,30 +67,29 @@ status-website:
   # à la racine du site.
   themeUrl: https://status.coprozen.ma/coprozen-theme.css
 
-  introTitle: "État des services **CoproZen**"
+  introTitle: "Disponibilité des services **CoproZen**"
 
   introMessage: >
-    Consultez en temps réel la disponibilité de la plateforme CoproZen,
-    de l’espace applicatif, de l’API et du site institutionnel.
-    Cette page est actualisée automatiquement lorsqu’un incident
-    ou une dégradation de service est détecté.
+    Vérifiez ici si CoproZen rencontre un incident général.
+    Si tous les services sont disponibles mais que votre problème persiste,
+    contactez le support : il peut être lié à votre compte ou à vos droits.
 
   navbar:
-    - title: État des services
+    - title: Statut
       href: /
 
-    - title: Site CoproZen
+    - title: Accueil CoproZen
       href: https://www.coprozen.ma
 
-    - title: Application
-      href: https://app.coprozen.ma
+    - title: Se connecter
+      href: https://www.coprozen.ma/auth/login
 
     - title: Support
       href: mailto:support@coprozen.ma
 
   metaTags:
     - name: description
-      content: État et disponibilité en temps réel des services CoproZen.
+      content: Vérifiez la disponibilité des services CoproZen et les incidents en cours.
 
     - name: robots
       content: index, follow
@@ -102,37 +97,20 @@ status-website:
     - name: theme-color
       content: "#00a9e7"
 
-    - property: og:type
-      content: website
-
-    - property: og:title
-      content: État des services CoproZen
-
-    - property: og:description
-      content: Consultez la disponibilité de la plateforme et des services CoproZen.
-
-    - property: og:url
-      content: https://status.coprozen.ma
-
-    - property: og:image
-      content: https://www.coprozen.ma/coprozen_logo_with_text.png
-
   customHeadHtml: |
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="format-detection" content="telephone=no">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Disponibilité des services CoproZen">
+    <meta property="og:description" content="Vérifiez la disponibilité des services CoproZen et les incidents en cours.">
+    <meta property="og:url" content="https://status.coprozen.ma">
+    <meta property="og:image" content="https://www.coprozen.ma/coprozen_logo_with_text.png">
 
   customFootHtml: |
-    <div style="
-      max-width: 1120px;
-      margin: 24px auto 0;
-      padding: 20px 16px;
-      text-align: center;
-      color: #607083;
-      font-size: 14px;
-    ">
-      La disponibilité affichée est mesurée automatiquement depuis
-      l’infrastructure de surveillance CoproZen.
+    <div class="coprozen-status-note">
+      Les contrôles sont automatiques et ne consultent aucune donnée personnelle
+      ni information liée à votre copropriété.
     </div>
 
 # ==========================================================
@@ -140,32 +118,32 @@ status-website:
 # ==========================================================
 
 i18n:
-  activeIncidents: Incidents en cours
-  allSystemsOperational: Tous les services sont opérationnels
+  activeIncidents: Incident général en cours
+  allSystemsOperational: Tous les services CoproZen fonctionnent normalement
   incidentReport: "Incident n°$NUMBER"
   activeIncidentSummary: Ouvert le $DATE avec $POSTS mises à jour
   incidentTitle: Détails de l’incident $NUMBER
-  incidentDetails: Détails de l’incident
-  incidentFixed: Résolu
-  incidentOngoing: En cours
+  incidentDetails: Informations sur l’incident
+  incidentFixed: Incident résolu
+  incidentOngoing: Résolution en cours
   incidentOpenedAt: Ouvert le
   incidentClosedAt: Résolu le
-  incidentViewOnGitHub: Voir l’incident
+  incidentViewOnGitHub: Consulter le suivi de l’incident
   incidentCommentSummary: Publié le $DATE par $AUTHOR
-  pastIncidents: Incidents précédents
+  pastIncidents: Historique des incidents
   pastIncidentsResolved: Résolu en $MINUTES minutes avec $POSTS mises à jour
-  liveStatus: État actuel
+  liveStatus: Disponibilité actuelle
   overallUptime: "Disponibilité globale : $UPTIME"
   overallUptimeTitle: Disponibilité globale
-  averageResponseTime: "Temps de réponse moyen : $TIME ms"
-  averageResponseTimeTitle: Temps de réponse moyen
-  sevelDayResponseTime: Temps de réponse sur 7 jours
-  responseTimeMs: Temps de réponse en millisecondes
-  up: Opérationnel
-  down: Indisponible
-  degraded: Dégradé
+  averageResponseTime: "Délai de réponse moyen : $TIME ms"
+  averageResponseTimeTitle: Délai de réponse moyen
+  sevelDayResponseTime: Délai de réponse sur 7 jours
+  responseTimeMs: Délai de réponse en millisecondes
+  up: Disponible
+  down: Incident en cours
+  degraded: Service ralenti
   ms: ms
-  loading: Chargement
+  loading: Chargement de l’état des services
   navGitHub: GitHub
   footer: © CoproZen — État des services
   rateLimitExceededTitle: Limite de consultation atteinte
