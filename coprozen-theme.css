@@ -103,11 +103,21 @@ nav {
   -webkit-backdrop-filter: blur(16px);
 }
 
+nav .container {
+  width: min(1120px, calc(100% - 2rem));
+  max-width: 1120px;
+}
+
 nav img {
   width: auto;
   max-width: 320px;
   max-height: 72px;
   object-fit: contain;
+}
+
+/* Le logo contient déjà le nom CoproZen. */
+nav .logo > div {
+  display: none;
 }
 
 nav a {
